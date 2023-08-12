@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "yoga",
+        "repositoryURL": "https://github.com/facebook/yoga",
+        "state": {
+          "branch": "main",
+          "revision": "ef5784aca647a68343f5409e379519827edb86a9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

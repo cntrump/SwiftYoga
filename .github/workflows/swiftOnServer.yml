@@ -1,0 +1,29 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Swift on Server
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+env:
+  SWIFT_HOME: /opt/swift
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Swift
+      run: |
+        wget https://download.swift.org/swift-5.8.1-release/ubuntu2204/swift-5.8.1-RELEASE/swift-5.8.1-RELEASE-ubuntu22.04.tar.gz
+        tar xvf swift-5.8.1-RELEASE-ubuntu22.04.tar.gz -C /opt
+        mv /opt/swift-5.8.1-RELEASE-ubuntu22.04 $SWIFT_HOME
+    - name: Build
+      run: $SWIFT_HOME/usr/bin/swift build -v
+    - name: Run tests
+      run: $SWIFT_HOME/usr/bin/swift test -v

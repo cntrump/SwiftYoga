@@ -112,19 +112,19 @@ final class SwiftYogaTests: XCTestCase {
 
     func testCase_3() throws {
         let config = YGConfig()
-        let root = YGNode(config: config) {
-            $0.flexDirection = .column
-            $0.width = .point(200)
-            $0.height = .point(200)
-            $0.paddingLeft = .point(20)
-            $0.paddingTop = .point(20)
-        }
+        let root = YGNode(config: config)
+        root.style
+            .flexDirection(.column)
+            .width(.point(200))
+            .height(.point(200))
+            .paddingLeft(.point(20))
+            .paddingTop(.point(20))
 
-        let leaf = YGNode(config: root.config) {
-            $0.position = .absolute
-            $0.width = .percent(100)
-            $0.height = .percent(100)
-        }
+        let leaf = YGNode(config: root.config)
+        leaf.style
+            .position(.absolute)
+            .width(.percent(100))
+            .height(.percent(100))
 
         root.addSubnode(leaf)
 

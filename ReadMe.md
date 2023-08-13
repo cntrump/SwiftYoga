@@ -2,6 +2,10 @@
 
 A simple Swift wrapper for [yoga](https://github.com/facebook/yoga).
 
+```
+.package(url: "https://github.com/cntrump/SwiftYoga.git", .branch("main"))
+```
+
 Example code:
 
 ```swift

@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "SwiftYoga", targets: [ "SwiftYoga" ])
     ],
     dependencies: [
-        .package(url: "https://github.com/facebook/yoga", .branch("main"))
+        .package(url: "https://github.com/facebook/yoga.git", .branch("main"))
     ],
     targets: [
         .target(

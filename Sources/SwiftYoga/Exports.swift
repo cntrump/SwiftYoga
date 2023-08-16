@@ -9,3 +9,4 @@
 @_exported import struct yoga.core.YGOverflow
 @_exported import struct yoga.core.YGDisplay
 @_exported import struct yoga.core.YGValue
+@_exported import struct yoga.core.YGGutter

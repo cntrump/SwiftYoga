@@ -40,23 +40,6 @@ extension YGConfig {
         }
     }
 
-    // Yoga previously had an error where containers would take the maximum space
-    // possible instead of the minimum like they are supposed to. In practice this
-    // resulted in implicit behaviour similar to align-self: stretch; Because this
-    // was such a long-standing bug we must allow legacy users to switch back to
-    // this behaviour.
-    public var useLegacyStretchBehaviour: Bool {
-        @available(*, deprecated, message: "Please use \"YGConfigGetErrata()\"")
-        get {
-            return YGConfigGetUseLegacyStretchBehaviour(configRef)
-        }
-
-        @available(*, deprecated, message: "\"YGConfigSetUseLegacyStretchBehaviour\" will be removed in the next release. Usage should be replaced with \"YGConfigSetErrata(YGErrataAll)\" to opt out of all future breaking conformance fixes, or \"YGConfigSetErrata(YGErrataStretchFlexBasis)\" to opt out of the specific conformance fix previously disabled by \"UseLegacyStretchBehaviour\".")
-        set {
-            YGConfigSetUseLegacyStretchBehaviour(configRef, newValue)
-        }
-    }
-
     public var experimentalFeatures: YGExperimentalFeature {
         get {
             var features = YGExperimentalFeature()
@@ -69,17 +52,12 @@ extension YGConfig {
                 features.insert(.absolutePercentageAgainstPaddingEdge)
             }
 
-            if YGConfigIsExperimentalFeatureEnabled(configRef, .fixJNILocalRefOverflows) {
-                features.insert(.fixJNILocalRefOverflows)
-            }
-
             return features
         }
 
         set {
             YGConfigSetExperimentalFeatureEnabled(configRef, .webFlexBasis, newValue.contains(.webFlexBasis))
             YGConfigSetExperimentalFeatureEnabled(configRef, .absolutePercentageAgainstPaddingEdge, newValue.contains(.absolutePercentageAgainstPaddingEdge))
-            YGConfigSetExperimentalFeatureEnabled(configRef, .fixJNILocalRefOverflows, newValue.contains(.fixJNILocalRefOverflows))
         }
     }
 

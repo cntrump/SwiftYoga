@@ -97,8 +97,6 @@ extension YGExperimentalFeature: OptionSet {
     public static let webFlexBasis = YGExperimentalFeatureWebFlexBasis
 
     public static let absolutePercentageAgainstPaddingEdge = YGExperimentalFeatureAbsolutePercentageAgainstPaddingEdge
-
-    public static let fixJNILocalRefOverflows = YGExperimentalFeatureFixJNILocalRefOverflows
 }
 
 extension YGFlexDirection {

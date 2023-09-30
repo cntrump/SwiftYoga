@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "yoga",
-        "repositoryURL": "https://github.com/facebook/yoga",
+        "repositoryURL": "https://github.com/facebook/yoga.git",
         "state": {
           "branch": "main",
-          "revision": "ef5784aca647a68343f5409e379519827edb86a9",
+          "revision": "a8566a01503e283f2e06fdcb12b80603035aadb1",
           "version": null
         }
       }

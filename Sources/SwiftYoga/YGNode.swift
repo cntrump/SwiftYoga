@@ -94,7 +94,7 @@ extension YGNode {
             YGNodeSetMeasureFunc(nodeRef, nil)
         }
 
-        YGNodeInsertChild(nodeRef, child.nodeRef, UInt32(index))
+        YGNodeInsertChild(nodeRef, child.nodeRef, index)
         children.insert(child, at: index)
     }
 
@@ -129,8 +129,8 @@ extension YGNode {
         }
 
         let dstNode = children[index]
-        YGNodeSwapChild(nodeRef, child.nodeRef, UInt32(index))
-        YGNodeSwapChild(nodeRef, dstNode.nodeRef, UInt32(srcIndex))
+        YGNodeSwapChild(nodeRef, child.nodeRef, index)
+        YGNodeSwapChild(nodeRef, dstNode.nodeRef, srcIndex)
         children.swapAt(srcIndex, index)
     }
 
@@ -182,7 +182,7 @@ extension YGNode {
             return
         }
 
-        YGNodeSwapChild(nodeRef, child.nodeRef, UInt32(lastIndex))
+        YGNodeSwapChild(nodeRef, child.nodeRef, lastIndex)
         children.swapAt(srcIndex, lastIndex)
     }
 

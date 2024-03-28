@@ -223,10 +223,6 @@ extension YGNode {
         YGNodeMarkDirty(nodeRef)
     }
 
-    public func markDirtyAndPropagateToDescendants() {
-        YGNodeMarkDirtyAndPropagateToDescendants(nodeRef)
-    }
-
     public var isDirty: Bool {
         YGNodeIsDirty(nodeRef)
     }

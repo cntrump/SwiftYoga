@@ -48,16 +48,11 @@ extension YGConfig {
                 features.insert(.webFlexBasis)
             }
 
-            if YGConfigIsExperimentalFeatureEnabled(configRef, .absolutePercentageAgainstPaddingEdge) {
-                features.insert(.absolutePercentageAgainstPaddingEdge)
-            }
-
             return features
         }
 
         set {
             YGConfigSetExperimentalFeatureEnabled(configRef, .webFlexBasis, newValue.contains(.webFlexBasis))
-            YGConfigSetExperimentalFeatureEnabled(configRef, .absolutePercentageAgainstPaddingEdge, newValue.contains(.absolutePercentageAgainstPaddingEdge))
         }
     }
 

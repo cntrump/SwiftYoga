@@ -95,8 +95,6 @@ extension YGErrata {
 extension YGExperimentalFeature: OptionSet {
 
     public static let webFlexBasis = YGExperimentalFeatureWebFlexBasis
-
-    public static let absolutePercentageAgainstPaddingEdge = YGExperimentalFeatureAbsolutePercentageAgainstPaddingEdge
 }
 
 extension YGFlexDirection {
@@ -181,15 +179,6 @@ extension YGPositionType {
     public static let relative = YGPositionTypeRelative
 
     public static let absolute = YGPositionTypeAbsolute
-}
-
-extension YGPrintOptions: OptionSet {
-
-    public static let layout = YGPrintOptionsLayout
-
-    public static let style = YGPrintOptionsStyle
-
-    public static let children = YGPrintOptionsChildren
 }
 
 extension YGUnit {

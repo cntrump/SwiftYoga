@@ -130,9 +130,9 @@ final class SwiftYogaTests: XCTestCase {
 
         root.calculateLayout(width: YGUndefined, height: YGUndefined)
 
-        XCTAssertEqual(leaf.layout.left, 0)
-        XCTAssertEqual(leaf.layout.top, 0)
-        XCTAssertEqual(leaf.layout.width, 180)
-        XCTAssertEqual(leaf.layout.height, 180)
+        XCTAssertEqual(leaf.layout.left, 20)
+        XCTAssertEqual(leaf.layout.top, 20)
+        XCTAssertEqual(leaf.layout.width, 200)
+        XCTAssertEqual(leaf.layout.height, 200)
     }
 }
